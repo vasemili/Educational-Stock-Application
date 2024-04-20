@@ -1,0 +1,37 @@
+# Python artifacts
+*.pyc
+*.pyo
+*.egg-info/
+__pycache__/
+*.pyd
+*.swp
+*.swo
+*.swn
+*.pdb
+*.db.sqlite3
+*.log
+*.pot
+*.log
+*.ini
+*.cfg
+*.retry
+*.zip
+*.sqlite3
+
+# Virtual environments
+venv/
+*.venv/
+ENV/
+
+# OS generated files
+.DS_Store
+*.pem
+
+# IDE specific
+.idea/
+.vscode/
+
+# Frontend artifacts
+/node_modules/
+/dist/
+.env

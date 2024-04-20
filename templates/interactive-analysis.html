@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<div class="interactive-analysis">
+    <h1>Interactive Analysis</h1>
+
+    <!-- Display flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    <!-- Form for user input -->
+    <form action="/interactive-analysis" method="post">
+        <input type="text" name="company_name" class="company-input" placeholder="Enter company name or ticker">
+        <button type="submit">Get Chart</button>
+    </form>
+
+    <!-- Display the chart if available -->
+    {% if candlestick_chart %}
+        <div id="chart_container" class="chart-container"></div>
+        <script>
+            var chartData = {{ candlestick_chart.to_json() | safe }};
+            Plotly.newPlot("chart_container", chartData.data, chartData.layout);
+        </script>
+    {% endif %}
+    {% if actual_vs_predicted_chart %}
+        <div id="actual_vs_predicted_chart_container" class="chart-container"></div>
+        <script>
+            var actualVsPredictedChartData = {{ actual_vs_predicted_chart.to_json() | safe }};
+            Plotly.newPlot("actual_vs_predicted_chart_container", actualVsPredictedChartData.data, actualVsPredictedChartData.layout);
+        </script>
+    {% endif %}
+</div>
+{% endblock %}

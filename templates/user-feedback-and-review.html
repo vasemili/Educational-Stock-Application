@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="feedback-section">
+    <h1>User Feedback</h1>
+    
+    <p>We value your feedback and insights! Please share your thoughts and experiences below.</p>
+
+    <form action="/user-feedback-and-review" method="post" id="feedback-form">
+        <div class="form-group">
+            <label for="userName">Name (Optional):</label>
+            <input type="text" id="userName" name="userName" placeholder="John Doe">
+        </div>
+
+        <div class="form-group">
+            <label for="userEmail">Email (Optional, if you'd like a response):</label>
+            <input type="email" id="userEmail" name="userEmail" placeholder="johndoe@example.com">
+        </div>
+
+        <div class="form-group">
+            <label for="userFeedback">Your Feedback:</label>
+            <textarea id="userFeedback" name="userFeedback" rows="6" placeholder="Enter your feedback here..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">Submit Feedback</button>
+    </form>
+</div>
+
+{% endblock %}

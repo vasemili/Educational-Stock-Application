@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="history-section centered">
+    <h1>The History of Stocks</h1>
+    
+    <p class="intro centered">The story of the stock market is a tale of evolution, innovation, and global economic shifts. From the bustling ports of Amsterdam to the digital hubs of today, explore the journey of stocks over the centuries.</p>
+
+    <section class="era centered">
+        <h2>17th Century: Amsterdam's Initiative</h2>
+        <figure class="image-section centered">
+            <img src="{{ url_for('static', filename='images/dutch_east_india.png') }}" alt="Dutch East India Company">
+            <figcaption>Figure 1: Dutch East India Company</figcaption>
+        </figure>
+        <p>The issuance of the first shares of the <strong>Dutch East India Company</strong> marked Amsterdam as the birthplace of the stock market. These shares laid the foundation for companies to raise funds and share profits with investors, influencing Europe's financial landscape.</p>
+    </section>
+
+    <section class="era centered">
+        <h2>18th Century: America's Entry</h2>
+        <figure class="image-section centered">
+            <img src="{{ url_for('static', filename='images/philadelphia_stock_exchange.jpg') }}" alt="Philadelphia Stock Exchange">
+            <figcaption>Figure 2: Philadelphia Stock Exchange</figcaption>
+        </figure>
+        <p>The establishment of the <strong>Philadelphia Stock Exchange</strong> in 1790 signaled America's foray into stock trading. Originally trading government bonds, it soon diversified, setting the stage for modern stock markets.</p>
+    </section>
+
+    <section class="era centered">
+        <h2>19th Century: NYSE's Ascendancy</h2>
+        <figure class="image-section centered">
+            <img src="{{ url_for('static', filename='images/nyse.jpg') }}" alt="New York Stock Exchange">
+            <figcaption>Figure 3: The New York Stock Exchange</figcaption>
+        </figure>
+        <p>The 1817-founded <strong>New York Stock Exchange (NYSE)</strong> emerged as the premier marketplace for trading securities, leaving an indelible mark on global finance.</p>
+    </section>
+
+    <section class="era centered">
+        <h2>20th & 21st Century: Digital Transformations</h2>
+        <p>These centuries saw a digital revolution in stock trading, with the advent of electronic exchanges and advanced algorithms. Today, interconnected global stock markets play an indispensable role in the world economy.</p>
+    </section>
+</div>
+
+{% endblock %}

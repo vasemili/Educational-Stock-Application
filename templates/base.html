@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="sentry-trace" content="cf49ea14a4e64008aa6f33606507122d-d9a6151d06aa7b88-0"/>
+    <title>Stocks Education</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='safari-pinned-tab.svg') }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600" />
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-top">
+                <img src="{{ url_for('static', filename='images/kean-logo.svg') }}" alt="Kean Logo" id="kean-logo">
+                <span class="app-title">Educational Stocks App</span>
+                <button class="hamburger-menu">&#9776;</button> <!-- Hamburger Icon -->
+            </div>
+
+            <div class="header-bottom">
+                <!-- Navigation Links -->
+                <nav class="main-nav">
+                    <a href="/">Home</a>
+                    <a href="/glossary">Glossary</a>
+                    <a href="/educational-resources">Education Resources</a>
+                    <a href="/interactive-analysis">Interactive Analysis</a>
+                    <a href="/history-of-stocks">History Of Stocks</a>
+                    <a href="/user-feedback-and-review">User Feedback</a>
+                    <a href="/article_scraper">Web Scraper</a>
+                </nav>
+
+                <div class="user-auth-links">
+                    {% if 'username' in session %}
+                        <div class="user-dropdown">
+                            <button class="dropbtn">{{ session['username'] }}</button>
+                            <div class="dropdown-content">
+                                <a href="{{ url_for('logout') }}">Logout</a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <a href="{{ url_for('login') }}">Login</a>
+                        <a href="{{ url_for('register') }}">Register</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Chatbot Section -->
+    <button class="chatbot-toggler">
+        <span class="material-symbols-rounded">Chat</span>
+        <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2>Stock Chatbot</h2>
+            <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+            <!-- Chat messages will be added here -->
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+            <span id="send-btn" class="material-symbols-rounded">send</span>
+        </div>
+    </div>
+    <!-- End of Chatbot Section -->
+
+    <footer>
+        Author: Emilio Vasquez
+    </footer>
+
+    <script type="module" src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/hamburger.js') }}"></script>
+</body>
+</html>

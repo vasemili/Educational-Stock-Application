@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="home-intro centered">
+    <div class="intro-text">
+        <h1>Welcome to the<br> Educational Stocks App!</h1>
+        <p>
+            Delve into the world of stocks and finance! Whether you're a beginner looking to learn the basics, an expert aiming to deepen your knowledge, or a curious mind interested in the history of stocks, we have something for everyone. Our comprehensive glossary, interactive analysis tools, and educational resources ensure you have a holistic understanding of the stock market.
+        </p>
+    </div>
+</div>
+
+<img src="{{ url_for('static', filename='images/stock_market_logo.jpg') }}" alt="Stock Market Image" class="centered-image">
+
+<div class="features centered">
+    <h2>Features:</h2>
+    <ul>
+        <li><strong>Glossary:</strong> A comprehensive dictionary for stock market terminologies.</li>
+        <li><strong>Educational Resources:</strong> Curated articles, videos, and tutorials for learning about stocks and finance.</li>
+        <li><strong>Interactive Analysis:</strong> Analyze stock data, trends, and predictions with our advanced interactive tools.</li>
+        <li><strong>History of Stocks:</strong> A journey through time tracing the evolution of stocks and stock markets.</li>
+        <li><strong>User Feedback:</strong> Give reviews and feedback to help us improve our website and share your experience.</li>
+    </ul>
+</div>
+
+<div class="get-started centered">
+    <h2>Ready to get started?</h2>
+    <p>Browse our sections using the navigation bar or explore the content above to learn more about stocks and finance.</p>
+</div>
+
+{% endblock %}

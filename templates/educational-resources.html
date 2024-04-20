@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="intro-head">Educational Links:</h1>
+    <p class="intro-text centered">
+        Welcome to our curated list of educational resources! Whether you're a beginner looking to dive into the world of stock markets or a seasoned trader seeking advanced tutorials, we've gathered some of the best resources available online. Explore the links below to enhance your knowledge and skills.
+    </p>
+    <div class="resource-cards">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/investors_underground_logo.jpg') }}" alt="Investors Underground Logo">
+            <a href="https://www.investorsunderground.com/" target="_blank">Investors Underground</a>
+            <p>A community of day traders with beginner and advanced courses. Offers chat rooms and webinars.</p>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/investopedia_logo.png') }}" alt="Investopedia Logo">
+            <a href="https://www.investopedia.com/" target="_blank">Investopedia</a>
+            <p>A comprehensive resource providing educational articles, tutorials, and financial news. Like the Wikipedia for finance and stock market.</p>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/coursera_logo.png') }}" alt="Coursera Logo">
+            <a href="https://www.coursera.org/" target="_blank">Coursera</a>
+            <p>Offers a variety of courses on finance and stock markets from renowned universities and institutions.</p>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/udemy_logo.png') }}" alt="Udemy Logo">
+            <a href="https://www.udemy.com/" target="_blank">Udemy</a>
+            <p>An online platform with courses on stock trading, investing, and other finance areas.</p>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/khanacademy_logo.png') }}" alt="Khan Academy Logo">
+            <a href="https://www.khanacademy.org/economics-finance-domain/core-finance" target="_blank">Khan Academy - Finance and Capital Markets</a>
+            <p>Free resources covering a range of topics in finance and capital markets. Great for beginners.</p>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/seeking_alpha_logo.png') }}" alt="Seeking Alpha Logo">
+            <a href="https://www.seekingalpha.com/" target="_blank">Seeking Alpha</a>
+            <p>Provides stock market insights, news, and analysis. Great for diverse perspectives on stocks and the market.</p>
+        </div>
+    </div>
+{% endblock %}

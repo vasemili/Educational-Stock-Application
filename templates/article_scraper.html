@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="scrape-wrapper">
+    <div class="form-container">
+        <h2>Scrape Article</h2>
+
+        {% with messages = get_flashed_messages(category_filter=["error", "info"]) %}
+          {% if messages %}
+            <div class="flash-messages">
+              {% for message in messages %}
+                <div class="{{ 'error-message' if 'error' in message else 'info-message' }}">{{ message }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('article_scraper') }}" method="post" class="scrape-form" data-scrape-url="{{ url_for('article_scraper') }}">
+          <div class="form-group">
+              <label for="article_url">Article URL:</label>
+              <input type="text" id="article_url" name="article_url" required placeholder="Enter the URL of the article to scrape">
+          </div>
+
+          <button type="submit" class="submit-button">Scrape Article</button>
+      </form>
+  </div>
+</div>
+
+<div class="summary-wrapper">
+  <div class="form-container">
+      <h2>Article Summary</h2>
+      <p>{{ summary }}</p>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/scrape.js') }}"></script>
+{% endblock %}
