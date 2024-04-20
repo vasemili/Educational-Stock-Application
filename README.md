@@ -2,9 +2,10 @@
 # Educational Stock App
 
 ## Description
-The Educational Stock App is a comprehensive educational platform for stock market enthusiasts. Built with Flask, JavaScript, HTML, and CSS, it offers a multi-page experience with various features including educational resources, a history of stocks, interactive analysis tools, user authentication, feedback mechanisms, and a unique article summarization feature for financial news.
+The Educational Stock App is a comprehensive educational platform for stock market enthusiasts. Built with Flask, JavaScript, HTML, and CSS, it offers a multi-page experience with various features including educational resources, a history of stocks, interactive analysis tools (short-term forecasting with ML models and sentiment analysis), user authentication, feedback mechanisms, and a unique article summarization feature for financial news.
 
 ## Features
+- **Glossary**: This is a page dedicated to inform people of important stock market ideas.
 - **Educational Resources**: A dedicated page offering valuable learning materials for beginners and advanced traders.
 - **Chatbot Integration**: Each page features an interactive chatbot to assist users in navigating the platform and answering queries.
 - **Stock History**: Users can explore the historical data of various stocks, visualized effectively.
@@ -31,6 +32,7 @@ The Educational Stock App is a comprehensive educational platform for stock mark
    pip install -r requirements.txt
 
 4. Set up environment variables (if applicable)
+
    Recommened to have .env file that contains (OpenAI_key, MongoDB_URI, Fin_Map_key, SECRET_KEY, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD, SENTIMENT_API_KEY, MAIL_USE_TLS, and MAIL_USE_SSL)
 
    The OpenAI_key is used for the chatbot and sentiment analysis. The chatbot uses this key to generate response, and the sentiment analysis uses this key in order to obtain keywords that will later be used for the NewsApi search for news headlines which will be sued for the sentiment analysis using finebert model.
@@ -53,10 +55,15 @@ The Educational Stock App is a comprehensive educational platform for stock mark
 
 
 ## Usage
-- **Home Page**: Brief description of the home page layout and functionalities.
+- **Home Page**: This is a welcoming page for users, with a quick description of what this website features.
+- **Glossary**: Like a dictionary for users.
 - **Educational Resources**: Guide on how to access and use educational resources.
-- **Stock History Page**: Instructions on how to view and interpret stock history data.
-- [Include instructions for other pages/features as needed]
+- **Interactive Analysis**: This is where users are able analyze any company by either putting the company ticker or name, if the company ticker or name does not match up with anything in the yfinance db then it will tell you that this company does not exist. This interactive analysis uses LSTM, Transformer and sentiment analysis to give good short-term predictions.
+- **History Of Stocks**: How the stock market began and where it is today.
+- **User Feedback**: This page is for users to input any feedback they have for the website.
+- **Web Scraper**: This page uses a web scraper to scrape any webpage (just feed it the URL), stores the websites info, and gives a quick summary of this website's information using a fine-tuned transformer model. This model is fine-tuned for news articles summarization.
+- **Login and Register**: Secure login and registration system with email verification.
+- **Chatbot Integration**: Each page features an interactive chatbot to assist users in navigating the platform and answering queries.
 
 ## Contributing
 Contributions to the Educational Stock App are welcome. Please follow these steps to contribute:
